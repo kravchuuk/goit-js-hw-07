@@ -1,3 +1,4 @@
+// task-2.js
 const galleryList = document.querySelector(".gallery");
 
 const images = [
