@@ -1,5 +1,4 @@
-// task-2.js
-const galleryList = document.querySelector(".gallery");
+const gallery = document.querySelector(".gallery");
 
 const images = [
   {
@@ -28,19 +27,13 @@ const images = [
   },
 ];
 
-const createGalleryItem = (image) => {
+images.forEach((image) => {
   const listItem = document.createElement("li");
-  listItem.classList.add("gallery-item");
+  const imgElement = document.createElement("img");
 
-  const img = document.createElement("img");
-  img.src = image.url;
-  img.alt = image.alt;
-  img.classList.add("gallery-image");
+  imgElement.src = image.url;
+  imgElement.alt = image.alt;
 
-  listItem.appendChild(img);
-
-  return listItem;
-};
-
-const galleryItems = images.map(createGalleryItem);
-galleryList.append(...galleryItems);
+  listItem.appendChild(imgElement);
+  gallery.appendChild(listItem);
+});

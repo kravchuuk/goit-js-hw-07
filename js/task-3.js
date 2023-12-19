@@ -4,14 +4,6 @@ const nameOutput = document.getElementById("name-output");
 nameInput.addEventListener("input", updateName);
 
 function updateName() {
-  const inputValue = nameInput.value.trim(); // Очищення від пробілів по краях
-
-  if (inputValue === "") {
-    nameOutput.textContent = "Anonymous";
-  } else {
-    nameOutput.textContent = inputValue;
-  }
+  const inputValue = nameInput.value.trim();
+  nameOutput.textContent = inputValue || "Anonymous";
 }
-
-// Початкове значення для спана
-updateName();
